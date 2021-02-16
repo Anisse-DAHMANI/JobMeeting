@@ -1,0 +1,2 @@
+select `entreprise`.`nomEnt` AS `nomEnt`,`lienformationresp`.`typeformation`, sum(((`formation`.`creneauFin` - `formation`.`creneauDebut`) + 1)) AS `nbCreneauxTotal` from `formation`,  `entreprise`,`lienformationresp`  where (`formation`.`entPropose` = `entreprise`.`IDEnt`) and (`lienformationresp`.`typeformation`= `formation`.`typeFormation`) and (`IDresp`='tifenn.corbel@univ-nantes.fr') group by 1,2 order by 1 ;
+
